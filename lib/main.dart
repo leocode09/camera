@@ -206,7 +206,7 @@ class _CameraScreenState extends State<CameraScreen>
           style: Theme.of(context).textTheme.titleMedium,
         ),
       );
-    } else if (isReady && controller != null) {
+    } else if (controller != null && controller.value.isInitialized) {
       preview = Center(
         child: AspectRatio(
           aspectRatio: controller.value.aspectRatio,
