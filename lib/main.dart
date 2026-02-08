@@ -3,8 +3,12 @@ import 'dart:typed_data';
 import 'package:camera/camera.dart';
 import 'package:flutter/material.dart';
 
+import 'platform/windows_camera_stub.dart'
+    if (dart.library.ffi) 'platform/windows_camera.dart';
+
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  registerWindowsCamera();
 
   List<CameraDescription> cameras = const [];
   Object? initError;
